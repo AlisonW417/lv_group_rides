@@ -1,0 +1,14 @@
+<h1><%= @ride.name %></h1>
+<p>Date of Ride: <%= @ride.date %></p>
+<p>Start time: <%= @ride.starting_time %></p>
+<p>Starting Location/Meet up: <%= @ride.starting_location %></p>
+<p>Approximate Distance (mileage): <%= @ride.distance %></p>
+<p>Level (beginner, intermediate, advanced): <%= @ride.level %></p>
+<p>Description: <%= @ride.description %></p>
+<br/>
+<p><a href="/rides/<%= @ride.id %>/edit">Edit this Ride</a></p>
+
+<form method="POST" action="/rides/<%= @ride.id %>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="Delete this Ride" />
+</form>

@@ -8,8 +8,8 @@ class UsersController < ApplicationController
 
     post '/signup' do 
         #binding.pry
-        user = User.create(params)
-        if user.valid?
+        user = User.new(params)
+        if user.save
             session[:user_id] = user.id 
             redirect '/rides'
         else 
