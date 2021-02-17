@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210215221133) do
+ActiveRecord::Schema.define(version: 20210217014044) do
 
   create_table "rides", force: :cascade do |t|
     t.string  "name"
-    t.date    "date"
+    t.string  "date"
     t.string  "starting_time"
     t.string  "starting_location"
     t.string  "distance"
