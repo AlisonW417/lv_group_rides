@@ -6,9 +6,11 @@
 <p>Level (beginner, intermediate, advanced): <%= @ride.level %></p>
 <p>Description: <%= @ride.description %></p>
 <br/>
+<%if @ride.user == current_user%>
 <p><a href="/rides/<%= @ride.id %>/edit">Edit this Ride</a></p>
 
 <form method="post" action="/rides/<%= @ride.id %>">
     <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete this Ride">
 </form>
+<%end%>
