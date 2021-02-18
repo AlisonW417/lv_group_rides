@@ -1,7 +1,11 @@
+<%=flash[:error]%>
 <h1>Lehigh Valley Group Rides</h1>
-<% Ride.all.each do |ride| %>
-    <h3><%= ride.name %> | Date: <%= ride.date %></h3> 
-    <%if current_user%>
-    <a href="/rides/<%=ride.id%>">View additional ride details</a></p>
-    <%end%>
+<br/>
+<%@rides.each do |ride|%>
+    <p><strong><%=ride.name%></strong><br/> 
+    <%=ride.date%> | 
+    <%=ride.starting_time%>
+        <%if current_user%>
+        - <a href="/rides/<%=ride.id%>">View Ride Details</a></p>
+        <%end%>
 <%end%>

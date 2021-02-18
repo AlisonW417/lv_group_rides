@@ -37,9 +37,16 @@ class UsersController < ApplicationController
     end 
 
     get '/users/:id' do 
+        #binding.pry
         @user = User.find_by(params)
         @rides = @user.rides
-        erb :'users/show'
+
+        if current_user == @user
+            erb :'users/show'
+        else 
+            flash[:error] = "You do not have access to view that page."
+            redirect '/'
+        end 
     end 
 
     get '/logout' do 

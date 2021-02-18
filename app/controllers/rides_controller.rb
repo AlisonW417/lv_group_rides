@@ -1,5 +1,7 @@
 class RidesController < ApplicationController
     get '/rides' do 
+        redirect_if_not_logged_in 
+        @rides = Ride.all      
         erb :'rides/index'
     end 
 
@@ -29,7 +31,12 @@ class RidesController < ApplicationController
     get '/rides/:id/edit' do
         redirect_if_not_logged_in
         @ride = Ride.find_by(id: params[:id])
-        erb :'rides/edit'
+        if @ride.user == current_user 
+            erb :'rides/edit'
+        else 
+            flash[:error] = "You cannot edit another user's ride."
+            redirect '/rides'
+        end 
     end 
 
     patch '/rides/:id' do 
