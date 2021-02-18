@@ -8,7 +8,7 @@
 <br/>
 <p><a href="/rides/<%= @ride.id %>/edit">Edit this Ride</a></p>
 
-<form method="POST" action="/rides/<%= @ride.id %>">
-    <input id="hidden" type="hidden" name="_method" value="DELETE" />
-    <input type="submit" value="Delete this Ride" />
+<form method="post" action="/rides/<%= @ride.id %>">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete this Ride">
 </form>

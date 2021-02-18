@@ -1,27 +1,27 @@
 <h1>Editing <%= @ride.name %></h1>
-<form method="POST" action="/rides/<%=@ride.id%>"> 
-<input type="hidden" name="_method" value="PATCH">
+<form method="post" action="/rides/<%= @ride.id %>"> 
+    <input type="hidden" name="_method" value="patch">
 
     <label for="name">Ride Name:</label>
-    <input type="text" name="name" value="<%= @ride.name %>" /><br/>
+    <input type="text" name="ride[name]" value="<%= @ride.name %>" /><br/>
     <br/>
     <label for="date">Date of Ride (mm/dd/yyyy):</label>
-    <input type="text" name="date" value="<%= @ride.date %>"/><br/>
+    <input type="text" name="ride[date]" value="<%= @ride.date %>"/><br/>
     <br/>
     <label for="starting_time">Start Time:</label>
-    <input type="text" name="starting_time" value="<%= @ride.starting_time %>" /><br/>
+    <input type="text" name="ride[starting_time]" value="<%= @ride.starting_time %>" /><br/>
     <br/>
     <label for="starting_location">Starting Location/Meet Up:</label>
-    <input type="text" name="starting_location" value="<%= @ride.starting_location %>" /><br/>
+    <input type="text" name="ride[starting_location]" value="<%= @ride.starting_location %>" /><br/>
     <br/>
     <label for="distance">Approximate Distance (mileage):</label>
-    <input type="text" name="distance" value="<%= @ride.distance %>" /><br/>
+    <input type="text" name="ride[distance]" value="<%= @ride.distance %>" /><br/>
     <br/>
     <label for="level">Level (beginner, intermediate, advanced):</label>
-    <input type="text" name="level" value="<%= @ride.level %>" /><br/>
+    <input type="text" name="ride[level]" value="<%= @ride.level %>" /><br/>
     <br/>
     <label for="description">Ride Description:</label>
-    <textarea name="description"><</textarea><br/>
+    <textarea name="ride[description]"><</textarea><br/>
     <br/>
     <input type="submit" value="Edit Ride" />
 
