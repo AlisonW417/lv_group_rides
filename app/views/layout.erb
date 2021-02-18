@@ -15,12 +15,15 @@
   </head>
   <body>
     <div class="wrapper">
+    <div class="nav">
+    <a href="/">Home</a>
     <%if current_user%>
     <a href="/logout">Log Out</a>
     <%else%>
     <a href="/login">Log In</a>
     <%end%>
     <a href="/rides">View Rides</a>
+    </div>
         <%= yield %>
 
       <footer class="branding">
