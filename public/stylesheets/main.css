@@ -18,6 +18,31 @@
     font-family: Sans-Serif;
     line-height: 18px;
   }
+  
+  header.nav {
+    padding-bottom: 20px;
+  }
+
+  header.nav li {
+    display: inline-block;
+    padding-right: 20px;
+    /*border-right: 1px solid #ccc;*/
+  }
+
+  nav ul li:last-child {
+    border-right: none;
+  }
+
+  header.nav li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+  }
+
+  header.nav li a:hover {
+    text-decoration: underline;
+    color: lightblue;
+  }
 
   .wrapper {
     background: #fff;
@@ -49,6 +74,17 @@
 
   p {
     margin-bottom: 18px;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: lightblue;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: #333;
   }
 
   .main {

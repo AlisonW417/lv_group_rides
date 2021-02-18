@@ -1,8 +1,7 @@
 <h1>Lehigh Valley Group Rides</h1>
 <% Ride.all.each do |ride| %>
-    <h3><%= ride.name %></h3> 
-    <p><%= ride.date %><p>
+    <h3><%= ride.name %> | Date: <%= ride.date %></h3> 
     <%if current_user%>
-    <p><a href="/rides/<%=ride.id%>">View additional ride details</a></p>
+    <a href="/rides/<%=ride.id%>">View additional ride details</a></p>
     <%end%>
 <%end%>
