@@ -13,7 +13,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id 
             redirect '/rides'
         else 
-            ## ADD FLASH MESSAGE HERE
+            flash[:error] = user.errors.full_messages
             redirect '/signup'
         end 
     end 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id 
             redirect "/users/#{@user.id}"
         else 
-            # ADD FLASH MESSAGE HERE
+            flash[:error] = "Invalid Login"
             redirect '/login'
         end 
     end 

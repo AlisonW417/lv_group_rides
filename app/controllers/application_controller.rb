@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "lv_group_rides"
+    register Sinatra::Flash
   end
 
   get "/" do
@@ -20,6 +21,7 @@ class ApplicationController < Sinatra::Base
 
     def redirect_if_not_logged_in 
       if !current_user 
+        flash[:error] = "You must be logged in to perform that action."
         redirect '/login'
       end 
     end 

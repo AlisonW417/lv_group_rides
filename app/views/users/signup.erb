@@ -1,3 +1,9 @@
+<%if flash[:error]%>
+<%flash[:error].each do |error|%>
+    <%=error%><br/>
+<%end%>
+<%end%>
+
 <h1>Sign up for Lehigh Valley Group Rides</h1>
 <h2>Create a Username and Password below:</h2>
 <br/>
