@@ -18,6 +18,7 @@ class RidesController < ApplicationController
         if ride.save
             redirect "/rides/#{ride.id}" 
         else 
+            flash[:error] = ride.errors.full_messages
             redirect '/rides/new'
         end 
     end
