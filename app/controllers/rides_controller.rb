@@ -11,7 +11,6 @@ class RidesController < ApplicationController
     end 
 
     post '/rides' do 
-        #binding.pry
         redirect_if_not_logged_in
         ride = Ride.new(params)
         ride.user_id = session[:user_id]
@@ -41,7 +40,6 @@ class RidesController < ApplicationController
     end 
 
     patch '/rides/:id' do 
-        #binding.pry
         redirect_if_not_logged_in
         @ride = Ride.find_by(id: params[:id])
         if @ride.user == current_user 
@@ -53,7 +51,6 @@ class RidesController < ApplicationController
     end 
 
     delete '/rides/:id' do 
-        #binding.pry
         redirect_if_not_logged_in
         ride = Ride.find_by(id: params[:id])
         if ride.user == current_user

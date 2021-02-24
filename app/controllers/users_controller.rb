@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     end 
 
     post '/signup' do 
-        #binding.pry
         user = User.new(params)
         if user.save
             session[:user_id] = user.id 
@@ -37,7 +36,6 @@ class UsersController < ApplicationController
     end 
 
     get '/users/:id' do 
-        #binding.pry
         @user = User.find_by(params)
         @rides = @user.rides
 
